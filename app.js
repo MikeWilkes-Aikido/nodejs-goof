@@ -9,6 +9,7 @@ require('./typeorm-db')
 var st = require('st');
 var crypto = require('crypto');
 var express = require('express');
+var helmet = require('helmet');
 var http = require('http');
 var path = require('path');
 var ejsEngine = require('ejs-locals');
@@ -26,6 +27,7 @@ var cons = require('consolidate');
 const hbs = require('hbs')
 
 var app = express();
+app.use(helmet());
 var routes = require('./routes');
 var routesUsers = require('./routes/users.js')
 
